@@ -50,7 +50,7 @@ namespace MVC.Controllers
             return View(contato);
         }
 
-        [HttpPatch, ActionName("Editar")]
+        [HttpPost]
         public IActionResult Editar(int id, Contato contato)
         {
             if (id != contato.Id)
@@ -101,6 +101,6 @@ namespace MVC.Controllers
             return View(contato);
         }
         
-        
+
     }
 }
