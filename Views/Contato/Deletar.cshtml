@@ -6,7 +6,7 @@
 <h1>Deletar Contato</h1>
 
 <div>
-    <h2>Tem certeza que deseja deletar o contato @Model.Nome?</h2>
+    <h2>Tem certeza que deseja deletar o contato <strong style="color: red;">@Model.Nome</strong>?</h2>
 </div>
 
 <form asp-action="Deletar" asp-route-id="@Model.Id" method="post">
