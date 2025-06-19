@@ -3,6 +3,9 @@ using MVC.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Carregar variáveis de ambiente
+builder.Configuration.AddEnvironmentVariables();
+
 // Add services to the container.
 
 builder.Services.AddDbContext<AgendaContext>(options =>
