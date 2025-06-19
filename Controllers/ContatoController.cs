@@ -67,7 +67,7 @@ namespace MVC.Controllers
             return View(contato);
         }
 
-        public IActionResult Excluir(int id)
+        public IActionResult Deletar(int id)
         {
             var contato = _context.Contatos.Find(id);
             if (contato == null)
@@ -77,16 +77,17 @@ namespace MVC.Controllers
             return View(contato);
         }
 
-        [HttpPost, ActionName("Excluir")]
-        public IActionResult ExcluirConfirmado(int id)
+
+        [HttpPost]
+        public IActionResult Deletar(Contato contato)
         {
-            var contato = _context.Contatos.Find(id);
+            var contatoBanco = _context.Contatos.Find(contato.Id);
             if (contato == null)
             {
                 return NotFound();
             }
 
-            _context.Contatos.Remove(contato);
+            _context.Contatos.Remove(contatoBanco);
             _context.SaveChanges();
             return RedirectToAction(nameof(Index));
         }

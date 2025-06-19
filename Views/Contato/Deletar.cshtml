@@ -1,0 +1,18 @@
+@model MVC.Models.Contato
+@{
+    ViewData["Title"] = "Deletar Contato";
+}
+
+<h1>Deletar Contato</h1>
+
+<div>
+    <h2>Tem certeza que deseja deletar o contato @Model.Nome?</h2>
+</div>
+
+<form asp-action="Deletar" asp-route-id="@Model.Id" method="post">
+    <input type="submit" value="Deletar" class="btn btn-danger" />
+    <input asp-action="Index" value="Cancelar" class="btn btn-success" />
+</form>
+<div>
+    <a asp-action="Index">Voltar</a>
+</div>
